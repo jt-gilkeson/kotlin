@@ -29,7 +29,6 @@
 
   <!-- CLION-PLUGIN-PLACEHOLDER-START -->
   <depends>com.intellij.modules.java</depends>
-  <depends optional="true" config-file="jvm.xml">com.intellij.modules.java</depends>
   <depends optional="true" config-file="javaScriptDebug.xml">JavaScriptDebugger</depends>
   <!-- CLION-PLUGIN-PLACEHOLDER-END -->
 
@@ -2809,6 +2808,8 @@
 
     <checkinHandlerFactory implementation="org.jetbrains.kotlin.idea.vcs.BunchFileCheckInHandlerFactory"/>
   </extensions>
+
+  <xi:include href="jvm.xml" xpointer="xpointer(/idea-plugin/*)"/>
 
   <xi:include href="tipsAndTricks.xml" xpointer="xpointer(/idea-plugin/*)"/>
 
