@@ -30,7 +30,9 @@ abstract class KtExpressionImpl(node: ASTNode) : KtElementImpl(node), KtExpressi
                 when (parent) {
                     is KtExpression, is KtValueArgument -> {
                         if (KtPsiUtil.areParenthesesNecessary(newElement, expression, parent as KtElement)) {
-                            return rawReplaceHandler(KtPsiFactory(expression).createExpressionByPattern("($0)", newElement))
+                            return rawReplaceHandler(
+                                KtPsiFactory(expression).createExpressionByPattern("($0)", newElement, reformat = false)
+                            )
                         }
                     }
                     is KtSimpleNameStringTemplateEntry -> {
